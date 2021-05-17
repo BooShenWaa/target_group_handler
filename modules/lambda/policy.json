@@ -1,0 +1,67 @@
+{
+  "Version": "2012-10-17",
+
+  "Statement": [
+    {
+      "Action": [
+        "logs:CreateLogGroup",
+
+        "logs:CreateLogStream",
+
+        "logs:PutLogEvents"
+      ],
+
+      "Resource": ["arn:aws:logs:*:*:*"],
+
+      "Effect": "Allow",
+
+      "Sid": "LambdaLogging"
+    },
+    {
+      "Sid": "ListAndDescribeDDB",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:List*",
+        "dynamodb:DescribeReservedCapacity*",
+        "dynamodb:DescribeLimits",
+        "dynamodb:DescribeTimeToLive"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Action": ["dynamodb:PutItem", "dynamodb:DeleteItem", "dynamodb:GetItem"],
+
+      "Resource": "${dynamodb-arn}",
+
+      "Effect": "Allow",
+
+      "Sid": "DDB"
+    },
+
+    {
+      "Action": [
+        "elasticloadbalancing:Describe*",
+
+        "elasticloadbalancing:RegisterTargets",
+
+        "elasticloadbalancing:DeregisterTargets"
+      ],
+
+      "Resource": "*",
+
+      "Effect": "Allow",
+
+      "Sid": "ELB"
+    },
+
+    {
+      "Action": ["cloudwatch:putMetricData"],
+
+      "Resource": "*",
+
+      "Effect": "Allow",
+
+      "Sid": "CW"
+    }
+  ]
+}

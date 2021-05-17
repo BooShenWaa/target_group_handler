@@ -1,0 +1,2 @@
+alb_arn       = "arn:aws:elasticloadbalancing:eu-west-2:774752154143:loadbalancer/app/ALB/825fc547d378f0ec"
+nlb_tg_arn    = "arn:aws:elasticloadbalancing:eu-west-2:774752154143:targetgroup/NLB-TG/5fead1d0d75f1074"

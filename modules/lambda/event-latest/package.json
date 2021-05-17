@@ -1,0 +1,16 @@
+{
+  "name": "event-latest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-arn-splitter": "^1.0.0",
+    "aws-sdk": "^2.894.0"
+  }
+}
